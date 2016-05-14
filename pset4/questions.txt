@@ -1,0 +1,61 @@
+0) How many different colors does each format support?
+ BMP -> 16 million , GIF -> 256 colors ,JPEG -> 16 million , PNG -> 16 million
+
+1)Which of the formats supports animation?
+GIF
+
+2)What’s the difference between lossy and lossless compression?
+Lossy and lossless compression refer to when an image is uncompressed, the original data being present there or not.
+Lossless means that all of the orginal data remains while Lossy means that some of the data is lost when the file is uncompressed.
+
+3)Which of these formats is lossy-compressed?
+Lossy-compressed: JPEG
+
+4)What happens, technically speaking, when a file is deleted on a FAT file system?
+FAT stands for File Allocation Table and when a file is deleted from the FAT file system, the file is deleted from the FAT clusters 
+but it is moved to the free clusers within the hard drive 
+
+5)What can someone like you do to ensure (with high probability) that files you delete cannot be recovered?
+ You can fill every addressable block with ASCII NUL bytes or use/purchase softward that will santize your hardrive for you. 
+
+6) What’s stdint.h?
+It is a header file that defines and provides a set of typedefs that specify exact-width integer types,
+together with the defined minimum and maximum allowable values for each type, using macros
+
+7) What’s the point of using uint8_t, uint32_t, int32_t, and uint16_t in a program?
+It allows you to be more specific in the intergers you define in terms of their byte size and the number of different values it could be
+
+8) How many bytes is a BYTE, a DWORD, a LONG, and a WORD, respectively?
+BYTE- 1
+DWORD- 4
+LONG- 4
+WORD- 2
+
+9) What (in ASCII, decimal, or hexadecimal) must the first two bytes of any BMP file be? (Leading bytes used to identify file formats (with high probability) are generally called "magic numbers.)"
+ASCII
+
+10) What’s the difference between bfSize and biSize?
+biSize is the number of bytes required by the structure while bfSize is the size of the bmp file in bytes
+
+11) What does it mean if biHeight is negative?
+the bitmap is a top-down DIB and its first pixel is in the upper left hand corner
+
+12) What field in BITMAPINFOHEADER specifies the BMP’s color depth (i.e., bits per pixel)?
+biBitCount
+
+13) Why might fopen return NULL in copy.c:37?
+The name/path to the file may be wrong so we may not be able to find the file to open it up
+
+14) Why is the third argument to fread always 1 in our code?
+It is the number of elements which would be one based on our code
+
+15) What value does copy.c:70 assign padding if bi.biWidth is 3?
+3
+
+16) What does fseek do?
+It allows you to move around the file and helps you to move the file pointer so you can write at different portions of the file
+
+17) What is SEEK_CUR?
+It is the current position of the file pointer
+
+18) WHODUNIT? -> Rick Astley

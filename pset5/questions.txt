@@ -1,0 +1,39 @@
+0)What is pneumonoultramicroscopicsilicovolcanoconiosis?
+- lung disease caused by inhaling very fine ash and sand dust.
+1)According to its man page, what does getrusage do?
+ - returns resource usage stats for the calling process
+2)Per that same man page, how many members are in a variable of type struct rusage?
+16
+3)Why do you think we pass before and after by reference (instead of by value) to calculate, even though we’re not changing their contents?
+Because it's a struct so by passing it by refernce, we can access all the values that comprise of it.
+4)Explain as precisely as possible, in a paragraph or more, how main goes about reading words from a file. In other words, convince us that you indeed understand how that function’s for loop works.
+We start off with a couple of checks -> figuring out how many params we have and if they are correct, the directionry we are using, setting up our benchmark
+so we can time stuff. We then load directory into memory so we can compare it against our file and mark how long it took to load it into memory.
+We then open up our file and start making comparsions. We then do some checks to make sure that the word is a word (that it has letters instead of numbers, etc.)
+and then check it against the dictionary value and add to our time counter how long that took. If it is mispelled, we add it to a variabe that counts the mispellings and print out the mispelled word.
+we then unload the dictionary which i suspect is freeing up the memory, and then printing out all the time it took for us to all of these tasks.
+
+5)Why do you think we used fgetc to read each word’s characters one at a time rather than use fscanf with a format string like "%s" to read whole words at a time? Put another way, what problems might arise by relying on fscanf alone?
+Because fscanf may pick up periods and other punctation as a part of the word. fgetc lets us avoid the punctation and know when words are ending.
+
+6)Why do you think we declared the parameters for check and load as const?
+Because those variables are passed through the command line and will not be changing over the course of the operation
+
+7)What data structure(s) did you use to implement your spell-checker? Be sure not to leave your answer at just "hash table," "trie," or the like. 
+Expound on what’s inside each of your "nodes."
+I ended up using a trie, creating for each letter in the alphbet, 27 nodes to fit the word's following letter, which then in turn, had their own 27, etc.
+The function would see the first letter of the word, go to that node, then based on the second letter, go to that node or create a new one, and continue onward
+until the word ended, which at that point, we added the is_word boolean to it.
+
+8)How slow was your code the first time you got it working correctly?
+To be honest, it was about the same. 
+
+9)What kinds of changes, if any, did you make to your code in order to improve its performance?
+I fooled around with using a while loop for my check to make it faster but it didn't improve it any. Load is where the majority of my 
+time is coming in and without switching to a hash table, i am not sure it it can get faster. 
+
+10) Do you feel that your code has any bottlenecks that you were not able to chip away at?
+When i run valgrid, it is telling me I have no memory leaks but errors and it is equal to the number of words in the directionary.
+I know that errors revole around this:
+Conditional jump or move depends on uninitialised value(s) -> when i free a node
+Uninitialised value was created by a heap allocation -> when i malloc to load the dictionary

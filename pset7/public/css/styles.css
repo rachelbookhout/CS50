@@ -1,0 +1,73 @@
+/**
+ * styles.css
+ *
+ * Computer Science 50
+ * Problem Set 7
+ *
+ * Global CSS.
+ */
+
+.container
+{
+    /* center contents */
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+}
+
+#top
+{
+    /* surround with whitespace */
+    margin-bottom: 15px;
+    margin-top: 15px;
+}
+
+#top .nav
+{
+    /* center navigation pills */
+    display: inline-block;
+}
+
+#middle .form-control
+{
+    /* center form controls */
+    display: inline-block;
+
+    /* override Bootstrap's 100% width for form controls */
+    width: auto;
+}
+
+#bottom
+{
+    /* shrink bottom's font size */
+    font-size: smaller;
+
+    /* surround with whitespace */
+    margin: 20px;
+}
+table 
+{
+    width: 100%; border: 2px solid #000; 
+    
+}
+
+table thead tr th {
+  /* Set the heading's background image to something nice.
+      Use a similar background color, to maintain continuity. */
+  background-color: #000;
+
+  /* Set the foreground color to something readable on black. */
+  color: #FFF;
+  
+  /* Give the heading a larger, bold style */
+  font-size: 18px;
+  font-weight: bold;
+  
+  /* Finally, make it the same height as the background image. */
+  height: 35px;
+}
+
+#portfolio thead tr th
+{
+    background-color: #ADD8E6;
+}
